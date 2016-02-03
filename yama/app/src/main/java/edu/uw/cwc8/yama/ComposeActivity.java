@@ -40,6 +40,7 @@ public class ComposeActivity extends AppCompatActivity {
         contactButton = (Button)findViewById(R.id.btnContact);
         sendButton = (Button)findViewById(R.id.btnSend);
 
+        //sends message when the send button is clicked
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,10 +53,9 @@ public class ComposeActivity extends AppCompatActivity {
                 messageInput.setText("");
             }
         });
-
-        SmsManager smsManager = SmsManager.getDefault();
     }
 
+    //brings up the contact list from the device
     public void viewContact(View view){
         Log.v(TAG, "Viewing contact list");
         try {
