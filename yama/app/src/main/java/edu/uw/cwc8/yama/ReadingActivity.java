@@ -4,6 +4,7 @@ import android.app.ActionBar;
 import android.app.Fragment;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.provider.ContactsContract;
@@ -14,6 +15,7 @@ import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v4.widget.CursorAdapter;
 import android.support.v7.app.AppCompatActivity;
+import android.support.design.widget.FloatingActionButton;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -48,6 +50,14 @@ public class ReadingActivity extends AppCompatActivity implements LoaderManager.
 
         ArrayList<String> list = new ArrayList<String>();
         final Context context = this;
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ReadingActivity.this, ComposeActivity.class);
+                startActivity(intent);
+            }
+        });
 
         //initialize an inflator and inflate list_item for content
         LayoutInflater layoutInflater = getLayoutInflater();
